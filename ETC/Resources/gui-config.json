@@ -1,0 +1,27 @@
+{
+"configs" : [
+  {
+"server" : "free1.kxsw.us",
+"server_port" : 13869,
+"password" : "13869",
+"method" : "rc4-md5",
+"remarks" : "免费节点1"}
+,
+  {
+"server" : "free2.kxsw.us",
+"server_port" : 13869,
+"password" : "13869",
+"method" : "rc4-md5",
+"remarks" : "免费节点2"}
+
+],
+"strategy" : null,
+"index" : 0,
+"global" : false,
+"enabled" : true,
+"shareOverLan" : false,
+"isDefault" : false,
+"localPort" : 1080,
+"pacUrl" : null,
+"useOnlinePac" : false,
+"availabilityStatistics" : false}

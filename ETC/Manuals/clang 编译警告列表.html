@@ -1,0 +1,2913 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta http-equiv="last-modified" content="Friday, 06  2015 20:01:37 GMT" />
+  <title>Which Clang Warning Is Generating This Message?</title>
+
+  <meta name="description" content="Clang warning flags and their associated messages."/>
+  <meta name="author" content="Mattt Thompson"/>
+  <meta name="revisit-after" content="1 week"/>
+  <meta name="viewport" content="width=device-width"/>
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@mattt">
+  <meta name="twitter:title" content="Which Clang Warning Is Generating This Message?">
+  <meta name="twitter:description" content="A list of Clang warnings and their descriptions.">
+
+  <meta property="og:site_name" content="fuckingclangwarnings.com"/>
+  <meta property="og:title" content="Which Clang Warning Is Generating This Message?"/>
+  <meta property="og:url" content="http://fuckingclangwarnings.com"/>
+  <meta property="og:description" content="A list of Clang warnings and their descriptions."/>
+
+  <link rel="canonical" href="http://fuckingclangwarnings.com"/>
+  <link rel="license" href="http://opensource.org/licenses/NCSA"/>
+  <link rel="stylesheet" type="text/css" href="/css/screen.css"/>
+</head>
+
+<body>
+  <div role="container">
+    <header role="banner">
+      <hgroup>
+        <h1 id="logo">Which Clang Warning Is Generating This Message?</h1>
+      </hgroup>
+
+      <nav>
+        Jump to: <a href="#lex">Lexer</a>, <a href="#parse">Parser</a>, or <a href="#semantic">Semantic</a> Warnings
+      </nav>
+    </header>
+
+    <div id="main" role="main">
+      
+  
+  
+      
+  
+
+  
+    <section id="semantic">
+      <h1>Semantic Warnings</h1>
+
+      <table>
+        <thead>
+          <th>Warning</th>
+          <th>Message</th>
+        </thead>
+        <tbody>
+          
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-WCFString-literal</tt></td>
+              <td itemprop="description"><q>input conversion stopped due to an input byte that does not belong to the input codeset UTF-8</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-WNSObject-attribute</tt></td>
+              <td itemprop="description"><q>__attribute ((NSObject)) may be put on a typedef only, attribute is ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wabstract-vbase-init</tt></td>
+              <td itemprop="description"><q>initializer for virtual base class %0 of abstract class %1 will never be used</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Waddress-of-array-temporary</tt></td>
+              <td itemprop="description"><q>pointer is initialized by a temporary array, which will be destroyed at the end of the full-expression</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-maybe-repeated-use-of-weak</tt></td>
+              <td itemprop="description"><q>"weak %select{variable|property|implicit property|instance variable}0 %1 may be accessed multiple times in this %select{function|method|block|lambda}2 and may be unpredictably set to nil assign to a strong variable to keep the object alive</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-non-pod-memaccess</tt></td>
+              <td itemprop="description"><q>%select{destination for|source of}0 this %1 call is a pointer to ownership-qualified type %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-performSelector-leaks</tt></td>
+              <td itemprop="description"><q>performSelector may cause a leak because its selector is unknown</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-repeated-use-of-weak</tt></td>
+              <td itemprop="description"><q>"weak %select{variable|property|implicit property|instance variable}0 %1 is accessed multiple times in this %select{function|method|block|lambda}2 but may be unpredictably set to nil assign to a strong variable to keep the object alive</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-retain-cycles</tt></td>
+              <td itemprop="description"><q>capturing %0 strongly in this block is likely to lead to a retain cycle</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-unsafe-retained-assign</tt></td>
+              <td itemprop="description"><q>assigning retained object to unsafe property object will be released after assignment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-unsafe-retained-assign</tt></td>
+              <td itemprop="description"><q>assigning %select{array literal|dictionary literal|numeric literal|boxed expression|should not happen|block literal}0 to a weak %select{property|variable}1 object will be released after assignment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-unsafe-retained-assign</tt></td>
+              <td itemprop="description"><q>assigning retained object to %select{weak|unsafe_unretained}0 %select{property|variable}1 object will be released after assignment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds</tt></td>
+              <td itemprop="description"><q>array index %0 is past the end of the array (which contains %1 element%s2)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds</tt></td>
+              <td itemprop="description"><q>array index %0 is before the beginning of the array</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds</tt></td>
+              <td itemprop="description"><q>'static' has no effect on zero-length arrays</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds</tt></td>
+              <td itemprop="description"><q>array argument is too small contains %0 elements, callee requires at least %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds-pointer-arithmetic</tt></td>
+              <td itemprop="description"><q>the pointer incremented by %0 refers past the end of the array (that contains %1 element%s2)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warray-bounds-pointer-arithmetic</tt></td>
+              <td itemprop="description"><q>the pointer decremented by %0 refers before the beginning of the array</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wassign-enum</tt></td>
+              <td itemprop="description"><q>integer constant not in range of enumerated type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Watomic-property-with-user-defined-accessor</tt></td>
+              <td itemprop="description"><q>writable atomic property %0 cannot pair a synthesized %select{getter|setter}1 with a user defined %select{getter|setter}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wattributes</tt></td>
+              <td itemprop="description"><q>unknown attribute %0 ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wauto-var-id</tt></td>
+              <td itemprop="description"><q>'auto' deduced as 'id' in declaration of %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>unknown platform %0 in availability macro</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>overriding method %select{introduced after|deprecated before|obsoleted before}0 overridden method on %1 (%2 vs. %3)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>availability does not match previous declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>overriding method cannot be unavailable on %0 when its overridden method is available</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>feature cannot be %select{introduced|deprecated|obsoleted}0 in %1 version %2 before it was %select{introduced|deprecated|obsoleted}3 in version %4 attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbad-function-cast</tt></td>
+              <td itemprop="description"><q>cast from function call of type %0 to non-matching type %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbitfield-constant-conversion</tt></td>
+              <td itemprop="description"><q>implicit truncation from %2 to bitfield changes value from %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbitwise-op-parentheses</tt></td>
+              <td itemprop="description"><q>'&' within '|'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbool-conversion</tt></td>
+              <td itemprop="description"><q>"initialization of pointer of type %0 to null from a constant boolean "  "expression</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbridge-cast</tt></td>
+              <td itemprop="description"><q>%0 cannot bridge to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbridge-cast</tt></td>
+              <td itemprop="description"><q>%0 bridges to %1, not %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbuiltin-requires-header</tt></td>
+              <td itemprop="description"><q>declaration of built-in function '%0' requires inclusion of the header stdio.h</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbuiltin-requires-header</tt></td>
+              <td itemprop="description"><q>declaration of built-in function '%0' requires inclusion of the header setjmp.h</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbuiltin-requires-header</tt></td>
+              <td itemprop="description"><q>declaration of built-in function '%0' requires inclusion of the header ucontext.h</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++-compat</tt></td>
+              <td itemprop="description"><q>%select{|empty }0%select{struct|union}1 has size 0 in C, %select{size 1|non-zero size}2 in C++</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>explicit instantiation cannot be 'inline'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>explicit instantiation of %0 must occur at global scope</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>explicit instantiation of %0 not in a namespace enclosing %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>explicit instantiation of %q0 must occur in namespace %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-narrowing</tt></td>
+              <td itemprop="description"><q>constant expression evaluates to %0 which cannot be narrowed to type %1 in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-narrowing</tt></td>
+              <td itemprop="description"><q>type %0 cannot be narrowed to %1 in initializer list in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-narrowing</tt></td>
+              <td itemprop="description"><q>non-constant-expression cannot be narrowed from type %0 to %1 in initializer list in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>type definition in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>use of this statement in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>init-captures.def warn_cxx11_compat_init_capture : Warning  "initialized lambda captures are incompatible with C++ standards "  "before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>variable declaration in a constexpr %select{function|constructor}0 is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>constexpr function with no return statements is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>multiple return statements in constexpr function is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>variable templates are incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>substitution failure due to access control is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>%select{anonymous struct|union}0 member %1 with a non-trivial %select{constructor|copy constructor|move constructor|copy assignment operator|move assignment operator|destructor}2 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>enumeration type in nested name specifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>static data member %0 in union is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>default template arguments for a function template are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>scalar initialized from empty initializer list is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>befriending %1 without '%select{struct|interface|union|class|enum}0' keyword is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>use of null pointer as non-type template argument is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>friend declaration naming a member of the declaring class is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>non-class friend type %0 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>befriending enumeration type %0 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>use of non-static data member %0 in an unevaluated context is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>friend function %0 would be implicitly redefined in C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>%select{class template|class template partial|variable template|variable template partial|function template|member function|static data member|member class|member enumeration}0 specialization of %1 outside namespace %2 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>reference initialized from initializer list is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>redundant parentheses surrounding address non-type template argument are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>initialization of initializer_list object is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>use of 'template' keyword outside of a template is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>non-type template argument referring to %select{function|object}0 %1 with internal linkage is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>use of 'typename' outside of a template is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>passing object of trivial but non-POD type %0 through variadic %select{function|block|method|constructor}1 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>goto would jump into protected scope in C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>constructor call from initializer list is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'auto' type specifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>delegating constructors are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'constexpr' specifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>inheriting constructors are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>explicit conversion functions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>switch case would be in a protected scope in C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'%0' type specifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>indirect goto might cross protected scopes in C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>cast between pointer-to-function and pointer-to-object is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>implicit conversion from array size expression of type %0 to %select{integral|enumeration}1 type %2 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcast-align</tt></td>
+              <td itemprop="description"><q>cast from %0 to %1 increases required alignment from %2 to %3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcast-of-sel-type</tt></td>
+              <td itemprop="description"><q>cast of type %0 to %1 is deprecated use sel_getName instead</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wchar-subscripts</tt></td>
+              <td itemprop="description"><q>array subscript is of type 'char'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconditional-uninitialized</tt></td>
+              <td itemprop="description"><q>variable %0 may be uninitialized when %select{used here|captured by block}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconstant-logical-operand</tt></td>
+              <td itemprop="description"><q>use of logical '%0' with constant operand</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconstexpr-not-const</tt></td>
+              <td itemprop="description"><q>'constexpr' non-static member function will not be implicitly 'const' in C++1y add 'const' to avoid a change in behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>state of variable '%0' must match at the entry and exit of loop</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>parameter '%0' not in expected state when the function returns: expected '%1', observed '%2'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>argument not in expected state expected '%0', observed '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>invalid invocation of method '%0' on a temporary object while it is in the '%1' state</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>return state set for an unconsumable type '%0'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>consumed analysis attribute is attached to member of class '%0' which isn't marked as consumable</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>invalid invocation of method '%0' on object '%1' while it is in the '%2' state</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconsumed</tt></td>
+              <td itemprop="description"><q>return value not in expected state expected '%0', observed '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>implicit conversion discards imaginary component: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>non-type template argument with value '%0' converted to '%1' for unsigned template parameter of type %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>implicit conversion loses floating-point precision: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>implicit conversion loses integer precision: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>non-type template argument value '%0' truncated to '%1' for template parameter of type %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>implicit conversion turns vector to scalar: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wconversion</tt></td>
+              <td itemprop="description"><q>implicit conversion turns floating-point number into integer: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcovered-switch-default</tt></td>
+              <td itemprop="description"><q>default label in switch which covers all enumeration values</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcustom-atomic-properties</tt></td>
+              <td itemprop="description"><q>atomic by default property %0 has a user defined %select{getter|setter}1 (property should be marked 'atomic' if this is intended)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdangling-field</tt></td>
+              <td itemprop="description"><q>initializing pointer member %0 with the stack address of parameter %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdangling-field</tt></td>
+              <td itemprop="description"><q>binding reference %select{|subobject of }1member %0 to a temporary value</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdangling-field</tt></td>
+              <td itemprop="description"><q>binding reference member %0 to stack allocated parameter %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdangling-initializer-list</tt></td>
+              <td itemprop="description"><q>array backing the initializer list will be destroyed at the end of %select{the full-expression|the constructor}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdelete-incomplete</tt></td>
+              <td itemprop="description"><q>deleting pointer to incomplete type %0 may cause undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdelete-non-virtual-dtor</tt></td>
+              <td itemprop="description"><q>delete called on %0 that is abstract but has non-virtual destructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdelete-non-virtual-dtor</tt></td>
+              <td itemprop="description"><q>delete called on %0 that has virtual functions but non-virtual destructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated</tt></td>
+              <td itemprop="description"><q>access declarations are deprecated use using declarations instead</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated</tt></td>
+              <td itemprop="description"><q>definition of implicit copy %select{constructor|assignment operator}1 for %0 is deprecated because it has a user-declared %select{copy %select{assignment operator|constructor}1|destructor}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated</tt></td>
+              <td itemprop="description"><q>dynamic exception specifications are deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-increment-bool</tt></td>
+              <td itemprop="description"><q>incrementing expression of type bool is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-objc-isa-usage</tt></td>
+              <td itemprop="description"><q>assignment to Objective-C's isa is deprecated in favor of object_setClass()</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-objc-isa-usage</tt></td>
+              <td itemprop="description"><q>direct access to Objective-C's isa is deprecated in favor of object_getClass()</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-objc-pointer-introspection</tt></td>
+              <td itemprop="description"><q>bitmasking for introspection of Objective-C object pointers is strongly discouraged</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-objc-pointer-introspection-performSelector</tt></td>
+              <td itemprop="description"><q>warn_objc_pointer_masking.Text</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-writable-strings</tt></td>
+              <td itemprop="description"><q>dummy warning to enable -fconst-strings</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdirect-ivar-access</tt></td>
+              <td itemprop="description"><q>instance variable %0 is being directly accessed</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdistributed-object-modifiers</tt></td>
+              <td itemprop="description"><q>conflicting distributed object modifiers on return type in implementation of %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdistributed-object-modifiers</tt></td>
+              <td itemprop="description"><q>conflicting distributed object modifiers on parameter type in implementation of %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdivision-by-zero</tt></td>
+              <td itemprop="description"><q>division by zero is undefined</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdivision-by-zero</tt></td>
+              <td itemprop="description"><q>remainder by zero is undefined</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdocumentation</tt></td>
+              <td itemprop="description"><q>parameter '%0' not found in the function declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdocumentation</tt></td>
+              <td itemprop="description"><q>not a Doxygen trailing comment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wduplicate-enum</tt></td>
+              <td itemprop="description"><q>element %0 has been implicitly assigned %1 which another element has been assigned</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wduplicate-method-match</tt></td>
+              <td itemprop="description"><q>multiple declarations of method %0 found and ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdynamic-class-memaccess</tt></td>
+              <td itemprop="description"><q>%select{destination for|source of|first operand of|second operand of}0 this %1 call is a pointer to dynamic class %2 vtable pointer will be %select{overwritten|copied|moved|compared}3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wempty-body</tt></td>
+              <td itemprop="description"><q>switch statement has empty body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wempty-body</tt></td>
+              <td itemprop="description"><q>for loop has empty body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wempty-body</tt></td>
+              <td itemprop="description"><q>if statement has empty body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wempty-body</tt></td>
+              <td itemprop="description"><q>range-based for loop has empty body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wempty-body</tt></td>
+              <td itemprop="description"><q>while loop has empty body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wenum-compare</tt></td>
+              <td itemprop="description"><q>comparison of two values with different enumeration types%diff{ ($ and $)|}0,1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wenum-conversion</tt></td>
+              <td itemprop="description"><q>implicit conversion from enumeration type %0 to different enumeration type %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wexit-time-destructors</tt></td>
+              <td itemprop="description"><q>declaration requires an exit-time destructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wexplicit-ownership-type</tt></td>
+              <td itemprop="description"><q>method parameter of type %0 with no explicit ownership</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wextern-c-compat</tt></td>
+              <td itemprop="description"><q>%select{|empty }0%select{struct|union}1 has size 0 in C, %select{size 1|non-zero size}2 in C++</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wextern-initializer</tt></td>
+              <td itemprop="description"><q>'extern' variable has an initializer</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wfloat-equal</tt></td>
+              <td itemprop="description"><q>comparing floating point with == or != is unsafe</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>"data argument position '%0' exceeds the number of data arguments (%1)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>position arguments in format strings start counting at 1 (not 0)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>invalid position specified for %select{field width|field precision}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>cannot mix positional and non-positional arguments in format string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>values of type '%0' should not be used as format arguments add an explicit cast to %1 instead</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>format specifies type %0 but the argument has type %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>zero field width in scanf format string is unused</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>no closing ']' for '%%[' in scanf format string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>format string should not be a wide string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>format string contains '\\0' within the string body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>'%select{*|.*}0' specified field %select{width|precision}0 is missing a matching 'int' argument</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>field %select{width|precision}0 should have type %1, but argument has type %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>%select{field width|precision}0 used with '%1' conversion specifier, resulting in undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>format string missing</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>incomplete format specifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>flag '%0' results in undefined behavior with '%1' conversion specifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>flag '%0' is ignored when flag '%1' is present</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>more '%%' conversions than data arguments</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat</tt></td>
+              <td itemprop="description"><q>length modifier '%0' results in undefined behavior or no effect with '%1' conversion specifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat-extra-args</tt></td>
+              <td itemprop="description"><q>data argument not used by format string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat-invalid-specifier</tt></td>
+              <td itemprop="description"><q>invalid conversion specifier '%0'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat-nonliteral</tt></td>
+              <td itemprop="description"><q>format string is not a string literal</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat-security</tt></td>
+              <td itemprop="description"><q>format string is not a string literal (potentially insecure)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wformat-zero-length</tt></td>
+              <td itemprop="description"><q>format string is empty</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wgcc-compat</tt></td>
+              <td itemprop="description"><q>GCC does not allow the 'cleanup' attribute argument to be anything other than a simple identifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wglobal-constructors</tt></td>
+              <td itemprop="description"><q>declaration requires a global constructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wglobal-constructors</tt></td>
+              <td itemprop="description"><q>declaration requires a global destructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wgnu-conditional-omitted-operand</tt></td>
+              <td itemprop="description"><q>use of GNU ?: conditional expression extension, omitting middle operand</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wheader-hygiene</tt></td>
+              <td itemprop="description"><q>using namespace directive in global context in header</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Widiomatic-parentheses</tt></td>
+              <td itemprop="description"><q>using the result of an assignment as a condition without parentheses</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'malloc' attribute only applies to functions returning a pointer type</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute only applies to %select{functions|unions|variables and functions|functions and methods|parameters|functions, methods and blocks|functions, methods, and classes|functions, methods, and parameters|classes|variables|methods|variables, functions and labels|fields and global variables|structs|variables, functions and tag types|thread-local variables|variables and fields|variables, data members and tag types|types and namespaces|Objective-C interfaces}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'%0' attribute cannot be specified on a definition</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>__weak attribute cannot be specified on an automatic variable when ARC is not enabled</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>Objective-C GC does not allow weak variables on the stack</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>__weak attribute cannot be specified on a field declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 cannot be applied to %select{functions|Objective-C method}1 without return value</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute declaration must precede definition</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 is ignored, place it after \"%select{class|struct|union|interface|enum}1\" to apply attribute to type declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>__declspec attribute %0 is not supported</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 ignored, because it cannot be applied to a type</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 after definition is ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'sentinel' attribute only supported for variadic %select{functions|blocks}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'sentinel' attribute requires named arguments</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'%0' only applies to %select{function|pointer|Objective-C object or block pointer}1 types type here is %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'nonnull' attribute applied to function with no pointer arguments</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute can only be applied to instance variables or properties</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>ibaction attribute can only be applied to Objective-C instance methods</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 calling convention ignored on variadic function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 only applies to variables with static storage duration and functions</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute argument not supported: %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>#pramga ms_struct can not be used with dynamic classes or structures</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>transparent union definition must contain at least one field transparent_union attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>first field of a transparent union cannot have %select{floating point|vector}0 type %1 transparent_union attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>'gnu_inline' attribute requires function to be marked 'inline', attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>calling convention %0 ignored for this target</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>transparent_union attribute can only be applied to a union definition attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%select{alignment|size}0 of field %1 (%2 bits) does not match the %select{alignment|size}0 of the first field in transparent union transparent_union attribute ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 is already applied</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute ignored for field of type %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute ignored when parsing type</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute only applies to %select{functions|methods|properties}1 that return %select{an Objective-C object|a pointer|a non-retainable pointer}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute only applies to %select{Objective-C object|pointer}1 parameters</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 is already applied with different parameters</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>unknown visibility %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-qualifiers</tt></td>
+              <td itemprop="description"><q>"'%0' type qualifier%s1 on return type %plural{1:has|:have}1 no effect</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-qualifiers</tt></td>
+              <td itemprop="description"><q>ARC %select{unused|__unsafe_unretained|__strong|__weak|__autoreleasing}0 lifetime qualifier on return type is ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-atomic-properties</tt></td>
+              <td itemprop="description"><q>property is assumed atomic by default</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-atomic-properties</tt></td>
+              <td itemprop="description"><q>property is assumed atomic when auto-synthesizing the property</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-fallthrough</tt></td>
+              <td itemprop="description"><q>fallthrough annotation in unreachable code</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-fallthrough</tt></td>
+              <td itemprop="description"><q>unannotated fall-through between switch labels</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-fallthrough</tt></td>
+              <td itemprop="description"><q>fallthrough annotation does not directly precede switch label</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-function-declaration</tt></td>
+              <td itemprop="description"><q>implicit declaration of function %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-function-declaration</tt></td>
+              <td itemprop="description"><q>use of unknown builtin %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wimplicit-retain-self</tt></td>
+              <td itemprop="description"><q>"block implicitly retains 'self' explicitly mention 'self' to indicate this is intended behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wincompatible-library-redeclaration</tt></td>
+              <td itemprop="description"><q>incompatible redeclaration of library function %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wincomplete-implementation</tt></td>
+              <td itemprop="description"><q>method definition for %0 not found</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winherited-variadic-ctor</tt></td>
+              <td itemprop="description"><q>inheriting constructor does not inherit ellipsis</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winitializer-overrides</tt></td>
+              <td itemprop="description"><q>subobject initialization overrides initialization of other fields within its enclosing subobject</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winitializer-overrides</tt></td>
+              <td itemprop="description"><q>initializer overrides prior initialization of this subobject</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wint-to-pointer-cast</tt></td>
+              <td itemprop="description"><q>cast to %1 from smaller integer type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wint-to-void-pointer-cast</tt></td>
+              <td itemprop="description"><q>cast to %1 from smaller integer type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winvalid-iboutlet</tt></td>
+              <td itemprop="description"><q>IBOutletCollection properties should be copy/strong and not assign</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winvalid-iboutlet</tt></td>
+              <td itemprop="description"><q>%select{instance variable|property}2 with %0 attribute must be an object type (invalid %1)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winvalid-noreturn</tt></td>
+              <td itemprop="description"><q>function %0 declared 'noreturn' should not return</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winvalid-noreturn</tt></td>
+              <td itemprop="description"><q>function declared 'noreturn' should not return</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wlarge-by-value-copy</tt></td>
+              <td itemprop="description"><q>return value of %0 is a large (%1 bytes) pass-by-value object pass it by reference instead ?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wlarge-by-value-copy</tt></td>
+              <td itemprop="description"><q>%0 is a large (%1 bytes) pass-by-value argument pass it by reference instead ?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wliteral-conversion</tt></td>
+              <td itemprop="description"><q>implicit conversion from %0 to %1 changes value from %2 to %3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wliteral-range</tt></td>
+              <td itemprop="description"><q>magnitude of floating-point constant too large for type %0 maximum is %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wliteral-range</tt></td>
+              <td itemprop="description"><q>magnitude of floating-point constant too small for type %0 minimum is %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wlogical-not-parentheses</tt></td>
+              <td itemprop="description"><q>logical not is only applied to the left hand side of this comparison</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wlogical-op-parentheses</tt></td>
+              <td itemprop="description"><q>'&&' within '||'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wloop-analysis</tt></td>
+              <td itemprop="description"><q>variable%select{s| %1|s %1 and %2|s %1, %2, and %3|s %1, %2, %3, and %4}0 used in loop condition not modified in loop body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wloop-analysis</tt></td>
+              <td itemprop="description"><q>variable %0 is %select{decremented|incremented}1 both in the loop header and in the loop body</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmethod-signatures</tt></td>
+              <td itemprop="description"><q>conflicting parameter types in implementation of %0: %1 vs %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmethod-signatures</tt></td>
+              <td itemprop="description"><q>conflicting return type in implementation of %0: %1 vs %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmicrosoft</tt></td>
+              <td itemprop="description"><q>extra qualification on member %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmismatched-method-attributes</tt></td>
+              <td itemprop="description"><q>attributes on method implementation and its declaration must match</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmismatched-parameter-types</tt></td>
+              <td itemprop="description"><q>conflicting parameter types in implementation of %0%diff{: $ vs $|}1,2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmismatched-return-types</tt></td>
+              <td itemprop="description"><q>conflicting return type in implementation of %0%diff{: $ vs $|}1,2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-braces</tt></td>
+              <td itemprop="description"><q>suggest braces around initialization of subobject</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-declarations</tt></td>
+              <td itemprop="description"><q>'%0' ignored on this declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-field-initializers</tt></td>
+              <td itemprop="description"><q>missing field '%0' initializer</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-method-return-type</tt></td>
+              <td itemprop="description"><q>method has no return type specified defaults to 'id'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-noreturn</tt></td>
+              <td itemprop="description"><q>%select{function|method}0 %1 could be declared with attribute 'noreturn'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-noreturn</tt></td>
+              <td itemprop="description"><q>block could be declared with attribute 'noreturn'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-prototypes</tt></td>
+              <td itemprop="description"><q>no previous prototype for function %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-variable-declarations</tt></td>
+              <td itemprop="description"><q>no previous extern declaration for non-static variable %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmultiple-move-vbase</tt></td>
+              <td itemprop="description"><q>defaulted move assignment operator of %0 will move assign virtual base class %1 multiple times</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnested-anon-types</tt></td>
+              <td itemprop="description"><q>anonymous types declared in an anonymous union/struct are an extension</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wno-typedef-redefinition</tt></td>
+              <td itemprop="description"><q>Redefinition of typedef '%0' is a C11 feature</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-literal-null-conversion</tt></td>
+              <td itemprop="description"><q>"expression which evaluates to zero treated as a null pointer constant of "  "type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-pod-varargs</tt></td>
+              <td itemprop="description"><q>second argument to 'va_arg' is of ARC ownership-qualified type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-pod-varargs</tt></td>
+              <td itemprop="description"><q>cannot pass %select{non-POD|non-trivial}0 object of type %1 to variadic %select{function|block|method|constructor}2 expected type from format string was %3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-pod-varargs</tt></td>
+              <td itemprop="description"><q>second argument to 'va_arg' is of non-POD type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-pod-varargs</tt></td>
+              <td itemprop="description"><q>cannot pass object of %select{non-POD|non-trivial}0 type %1 through variadic %select{function|block|method|constructor}2 call will abort at runtime</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnon-virtual-dtor</tt></td>
+              <td itemprop="description"><q>%0 has virtual functions but non-virtual destructor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnonnull</tt></td>
+              <td itemprop="description"><q>null passed to a callee which requires a non-null argument</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-arithmetic</tt></td>
+              <td itemprop="description"><q>use of NULL in arithmetic operation</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-arithmetic</tt></td>
+              <td itemprop="description"><q>comparison between NULL and non-pointer %select{(%1 and NULL)|(NULL and %1)}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-dereference</tt></td>
+              <td itemprop="description"><q>indirection of non-volatile null pointer will be deleted, not trap</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-autosynthesis-property-ivar-name-match</tt></td>
+              <td itemprop="description"><q>autosynthesized property %0 will use %select{|synthesized}1 instance variable %2, not existing instance variable %3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-forward-class-redefinition</tt></td>
+              <td itemprop="description"><q>redefinition of forward class %0 of a typedef name of an object type is ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-interface-ivars</tt></td>
+              <td itemprop="description"><q>declaration of instance variables in the interface is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-literal-compare</tt></td>
+              <td itemprop="description"><q>direct comparison of %select{an array literal|a dictionary literal|a numeric literal|a boxed expression|}0 has undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-literal-missing-atsign</tt></td>
+              <td itemprop="description"><q>string literal must be prefixed by '@'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>instance method %objcinstance0 not found (return type defaults to 'id') did you mean %objcinstance2?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>class method %objcclass0 not found (return type defaults to 'id') did you mean %objcclass2?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>instance method %objcinstance0 not found (return type defaults to 'id')</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>instance method %0 is being used on 'Class' which is not in the root class</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>class method %objcclass0 not found (return type defaults to 'id')</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-method-access</tt></td>
+              <td itemprop="description"><q>instance method %0 found instead of class method %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-missing-property-synthesis</tt></td>
+              <td itemprop="description"><q>"auto property synthesis is synthesizing property not explicitly synthesized</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-missing-super-calls</tt></td>
+              <td itemprop="description"><q>method possibly missing a [super %0] call</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-noncopy-retain-block-property</tt></td>
+              <td itemprop="description"><q>"retain'ed block property does not copy the block "  "- use copy attribute instead</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-nonunified-exceptions</tt></td>
+              <td itemprop="description"><q>can not catch an exception thrown with @throw in C++ in the non-unified exception model</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-implementation</tt></td>
+              <td itemprop="description"><q>property %0 requires method %1 to be defined - use @dynamic or provide a method implementation in this category</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-implementation</tt></td>
+              <td itemprop="description"><q>property %0 requires method %1 to be defined - use @synthesize, @dynamic or provide a method implementation in this class implementation</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-implicit-mismatch</tt></td>
+              <td itemprop="description"><q>"primary property declaration is implicitly strong while redeclaration in class extension is weak</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-matches-cocoa-ownership-rule</tt></td>
+              <td itemprop="description"><q>property's synthesized getter follows Cocoa naming convention for returning 'owned' objects</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-no-attribute</tt></td>
+              <td itemprop="description"><q>no 'assign', 'retain', or 'copy' attribute is specified - 'assign' is assumed</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-no-attribute</tt></td>
+              <td itemprop="description"><q>default property attribute 'assign' not appropriate for non-GC object</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-synthesis</tt></td>
+              <td itemprop="description"><q>auto property synthesis will not synthesize property '%0' because it is 'readwrite' but it will be synthesized 'readonly' via another property</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-property-synthesis</tt></td>
+              <td itemprop="description"><q>"auto property synthesis will not synthesize property '%0' because it cannot share an ivar with another synthesized property</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-protocol-method-implementation</tt></td>
+              <td itemprop="description"><q>category is implementing a method which will also be implemented by its primary class</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-protocol-property-synthesis</tt></td>
+              <td itemprop="description"><q>auto property synthesis will not synthesize property declared in a protocol</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-redundant-literal-use</tt></td>
+              <td itemprop="description"><q>using %0 with a literal is redundant</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-root-class</tt></td>
+              <td itemprop="description"><q>class %0 defined without specifying a base class</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-string-compare</tt></td>
+              <td itemprop="description"><q>direct comparison of a string literal has undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wobjc-string-concatenation</tt></td>
+              <td itemprop="description"><q>concatenated NSString literal for an NSArray expression - possibly missing a comma</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wover-aligned</tt></td>
+              <td itemprop="description"><q>type %0 requires %1 bytes of alignment and the default allocator only guarantees %2 bytes</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverloaded-shift-op-parentheses</tt></td>
+              <td itemprop="description"><q>overloaded operator %select{|}0 has lower precedence than comparison operator</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverloaded-virtual</tt></td>
+              <td itemprop="description"><q>%q0 hides overloaded virtual %select{function|functions}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting distributed object modifiers on parameter type in declaration of %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting parameter types in declaration of %0: %1 vs %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting variadic declaration of method and its implementation</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting distributed object modifiers on return type in declaration of %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting parameter types in declaration of %0%diff{: $ vs $|}1,2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting return type in declaration of %0%diff{: $ vs $|}1,2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Woverriding-method-mismatch</tt></td>
+              <td itemprop="description"><q>conflicting return type in declaration of %0: %1 vs %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpacked</tt></td>
+              <td itemprop="description"><q>packed attribute is unnecessary for %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpadded</tt></td>
+              <td itemprop="description"><q>padding %select{struct|interface|class}0 %1 with %2 %select{byte|bit}3%select{|s}4 to align anonymous bit-field</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpadded</tt></td>
+              <td itemprop="description"><q>padding %select{struct|interface|class}0 %1 with %2 %select{byte|bit}3%select{|s}4 to align %5</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpadded</tt></td>
+              <td itemprop="description"><q>padding size of %0 with %1 %select{byte|bit}2%select{|s}3 to alignment boundary</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wparentheses</tt></td>
+              <td itemprop="description"><q>using the result of an assignment as a condition without parentheses</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wparentheses</tt></td>
+              <td itemprop="description"><q>%0 has lower precedence than %1 %1 will be evaluated first</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wparentheses</tt></td>
+              <td itemprop="description"><q>operator '?:' has lower precedence than '%0' '%0' will be evaluated first</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wparentheses-equality</tt></td>
+              <td itemprop="description"><q>equality comparison with extraneous parentheses</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpointer-arith</tt></td>
+              <td itemprop="description"><q>subtraction of pointers to type %0 of zero size has undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wpredefined-identifier-outside-function</tt></td>
+              <td itemprop="description"><q>predefined identifier is only valid inside function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wprivate-extern</tt></td>
+              <td itemprop="description"><q>use of __private_extern__ on a declaration may not produce external symbol private to the linkage unit and is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wprotocol</tt></td>
+              <td itemprop="description"><q>method %0 in protocol not implemented</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wprotocol-property-synthesis-ambiguity</tt></td>
+              <td itemprop="description"><q>property of type %0 was selected for synthesis</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreadonly-iboutlet-property</tt></td>
+              <td itemprop="description"><q>readonly IBOutlet property '%0' when auto-synthesized may not work correctly with 'nib' loader</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreadonly-setter-attrs</tt></td>
+              <td itemprop="description"><q>property attributes '%0' and '%1' are mutually exclusive</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreceiver-expr</tt></td>
+              <td itemprop="description"><q>receiver type %0 is not 'id' or interface pointer, consider casting it to 'id'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreceiver-forward-class</tt></td>
+              <td itemprop="description"><q>receiver type %0 for instance message is a forward declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreceiver-is-weak</tt></td>
+              <td itemprop="description"><q>"weak %select{receiver|property|implicit property}0 may be unpredictably set to nil</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreinterpret-base-class</tt></td>
+              <td itemprop="description"><q>'reinterpret_cast' %select{from|to}3 class %0 %select{to|from}3 its %select{virtual base|base at non-zero offset}2 %1 behaves differently from 'static_cast'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreorder</tt></td>
+              <td itemprop="description"><q>%select{field|base class}0 %1 will be initialized after %select{field|base}2 %3</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wrequires-super-attribute</tt></td>
+              <td itemprop="description"><q>%0 attribute cannot be applied to %select{methods in protocols|dealloc}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-stack-address</tt></td>
+              <td itemprop="description"><q>returning address of local temporary object</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-stack-address</tt></td>
+              <td itemprop="description"><q>returning address of label, which is local</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-stack-address</tt></td>
+              <td itemprop="description"><q>address of stack memory associated with local variable %0 returned</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-stack-address</tt></td>
+              <td itemprop="description"><q>reference to stack memory associated with local variable %0 returned</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-stack-address</tt></td>
+              <td itemprop="description"><q>returning reference to local temporary object</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-type</tt></td>
+              <td itemprop="description"><q>control may reach end of non-void function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-type</tt></td>
+              <td itemprop="description"><q>non-void %select{function|method}1 %0 should return a value, DefaultError</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-type</tt></td>
+              <td itemprop="description"><q>control reaches end of non-void function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-type-c-linkage</tt></td>
+              <td itemprop="description"><q>%0 has C-linkage specified, but returns incomplete type %1 which could be incompatible with C</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wreturn-type-c-linkage</tt></td>
+              <td itemprop="description"><q>%0 has C-linkage specified, but returns user-defined type %1 which is incompatible with C</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsection</tt></td>
+              <td itemprop="description"><q>section does not match previous declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wselector</tt></td>
+              <td itemprop="description"><q>creating selector for nonexistent method %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wselector-type-mismatch</tt></td>
+              <td itemprop="description"><q>multiple selectors named %0 found</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wself-assign</tt></td>
+              <td itemprop="description"><q>explicitly assigning a variable of type %0 to itself</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wself-assign-field</tt></td>
+              <td itemprop="description"><q>assigning %select{field|instance variable}0 to itself</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsentinel</tt></td>
+              <td itemprop="description"><q>"missing sentinel in %select{function call|method dispatch|block call}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsentinel</tt></td>
+              <td itemprop="description"><q>not enough variable arguments in %0 declaration to fit a sentinel</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshadow</tt></td>
+              <td itemprop="description"><q>declaration shadows a %select{"        "local variable|"        "variable in %2|"        "static data member of %2|"        "field of %2}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshadow-ivar</tt></td>
+              <td itemprop="description"><q>local declaration of %0 hides instance variable</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshift-count-negative</tt></td>
+              <td itemprop="description"><q>shift count is negative</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshift-count-overflow</tt></td>
+              <td itemprop="description"><q>shift count = width of type</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshift-op-parentheses</tt></td>
+              <td itemprop="description"><q>operator '%0' has lower precedence than '%1' '%1' will be evaluated first</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshift-overflow</tt></td>
+              <td itemprop="description"><q>signed shift result (%0) requires %1 bits to represent, but %2 only has %3 bits</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshift-sign-overflow</tt></td>
+              <td itemprop="description"><q>signed shift result (%0) sets the sign bit of the shift expression's type (%1) and becomes negative</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wshorten-64-to-32</tt></td>
+              <td itemprop="description"><q>implicit conversion loses integer precision: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsign-compare</tt></td>
+              <td itemprop="description"><q>comparison of integers of different signs: %0 and %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsign-conversion</tt></td>
+              <td itemprop="description"><q>implicit conversion changes signedness: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsign-conversion</tt></td>
+              <td itemprop="description"><q>operand of ? changes signedness: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsizeof-array-argument</tt></td>
+              <td itemprop="description"><q>sizeof on array function parameter will return size of %0 instead of %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsizeof-array-decay</tt></td>
+              <td itemprop="description"><q>sizeof on pointer operation will return size of %0 instead of %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsizeof-pointer-memaccess</tt></td>
+              <td itemprop="description"><q>'%0' call operates on objects of type %1 while the size is based on a " "different type %2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsizeof-pointer-memaccess</tt></td>
+              <td itemprop="description"><q>argument to 'sizeof' in %0 call is the same pointer type %1 as the %select{destination|source}2 expected %3 or an explicit length</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsometimes-uninitialized</tt></td>
+              <td itemprop="description"><q>variable %0 is %select{used|captured}1 uninitialized whenever %select{'%3' condition is %select{true|false}4|'%3' loop %select{is entered|exits because its condition is false}4|'%3' loop %select{condition is true|exits because its condition is false}4|switch %3 is taken|its declaration is reached|%3 is called}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstatic-local-in-inline</tt></td>
+              <td itemprop="description"><q>non-constant static local variable in inline function may be different in different files</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstatic-self-init</tt></td>
+              <td itemprop="description"><q>static variable %0 is suspiciously used within its own initialization</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstrict-selector-match</tt></td>
+              <td itemprop="description"><q>multiple methods named %0 found</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstring-compare</tt></td>
+              <td itemprop="description"><q>result of comparison against %select{a string literal|@encode}0 is unspecified (use strncmp instead)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstring-conversion</tt></td>
+              <td itemprop="description"><q>implicit conversion turns string literal into bool: %0 to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstring-plus-char</tt></td>
+              <td itemprop="description"><q>adding %0 to a string pointer does not append to the string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstring-plus-int</tt></td>
+              <td itemprop="description"><q>adding %0 to a string does not append to the string</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstrlcpy-strlcat-size</tt></td>
+              <td itemprop="description"><q>size argument in %0 call appears to be size of the source expected the size of the destination</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstrncat-size</tt></td>
+              <td itemprop="description"><q>the value of the size argument in 'strncat' is too large, might lead to a " "buffer overflow</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstrncat-size</tt></td>
+              <td itemprop="description"><q>size argument in 'strncat' call appears " "to be size of the source</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstrncat-size</tt></td>
+              <td itemprop="description"><q>the value of the size argument to 'strncat' is wrong</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsuper-class-method-mismatch</tt></td>
+              <td itemprop="description"><q>method parameter type %diff{$ does not match super class method parameter type $|does not match super class method parameter type}0,1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>overflow converting case value to switch condition type (%0 to %1)</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>case value not in enumerated type %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>%0 enumeration values not handled in switch: %1, %2, %3...</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>enumeration values %0 and %1 not handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>enumeration value %0 not handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch</tt></td>
+              <td itemprop="description"><q>enumeration values %0, %1, and %2 not handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch-enum</tt></td>
+              <td itemprop="description"><q>enumeration values %0, %1, and %2 not explicitly handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch-enum</tt></td>
+              <td itemprop="description"><q>enumeration values %0 and %1 not explicitly handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch-enum</tt></td>
+              <td itemprop="description"><q>%0 enumeration values not explicitly handled in switch: %1, %2, %3...</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wswitch-enum</tt></td>
+              <td itemprop="description"><q>enumeration value %0 not explicitly handled in switch</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtautological-compare</tt></td>
+              <td itemprop="description"><q>comparison of %0 unsigned%select{| enum}2 expression is always %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtautological-compare</tt></td>
+              <td itemprop="description"><q>%select{self-|array }0comparison always evaluates to %select{false|true|a constant}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtautological-compare</tt></td>
+              <td itemprop="description"><q>comparison of unsigned%select{| enum}2 expression %0 is always %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtautological-constant-out-of-range-compare</tt></td>
+              <td itemprop="description"><q>comparison of constant %0 with expression of type %1 is always %select{false|true}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>locking '%0' that is already locked</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>cannot call function '%0' while mutex '%1' is locked</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}2 the value pointed to by '%0' requires locking %select{'%1'|'%1' exclusively}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>unlocking '%0' that was not locked</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>mutex '%0' is locked exclusively and shared in the same scope</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>calling function '%0' requires %select{shared|exclusive}2 lock on '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}2 variable '%0' requires locking %select{'%1'|'%1' exclusively}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>cannot resolve lock expression</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>expecting mutex '%0' to be locked at the end of function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>mutex '%0' is not locked on every path through here</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}1 the value pointed to by '%0' requires locking %select{any mutex|any mutex exclusively}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}1 variable '%0' requires locking %select{any mutex|any mutex exclusively}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>mutex '%0' is still locked at the end of function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-analysis</tt></td>
+              <td itemprop="description"><q>expecting mutex '%0' to be locked at start of each loop</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>ignoring %0 attribute because its argument is invalid</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute only applies to %select{fields and global variables|functions and methods|classes and structs}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute requires arguments that are class type or point to class type type here is '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute can only be applied in a context annotated with 'lockable' attribute</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>%0 attribute requires arguments whose type is annotated with 'lockable' attribute type here is '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-attributes</tt></td>
+              <td itemprop="description"><q>'%0' only applies to pointer types type here is %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-beta</tt></td>
+              <td itemprop="description"><q>Thread safety beta warning.</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-precise</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}2 the value pointed to by '%0' requires locking %select{'%1'|'%1' exclusively}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-precise</tt></td>
+              <td itemprop="description"><q>%select{reading|writing}2 variable '%0' requires locking %select{'%1'|'%1' exclusively}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wthread-safety-precise</tt></td>
+              <td itemprop="description"><q>calling function '%0' requires %select{shared|exclusive}2 lock on '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtype-safety</tt></td>
+              <td itemprop="description"><q>this type tag was not designed to be used with this function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtype-safety</tt></td>
+              <td itemprop="description"><q>specified %0 type tag requires a null pointer</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtype-safety</tt></td>
+              <td itemprop="description"><q>argument type %0 doesn't match specified '%1' type tag %select{that requires %3|}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundeclared-selector</tt></td>
+              <td itemprop="description"><q>undeclared selector %0 did you mean %1?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundeclared-selector</tt></td>
+              <td itemprop="description"><q>undeclared selector %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundefined-inline</tt></td>
+              <td itemprop="description"><q>inline function %q0 is not defined</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundefined-internal</tt></td>
+              <td itemprop="description"><q>%select{function|variable}0 %q1 has internal linkage but is not defined</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundefined-reinterpret-cast</tt></td>
+              <td itemprop="description"><q>dereference of type %1 that was reinterpret_cast from type %0 has undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundefined-reinterpret-cast</tt></td>
+              <td itemprop="description"><q>reinterpret_cast from %0 to %1 has undefined behavior</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>reference %0 is not yet bound to a value when used within its own initialization</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>field %0 is uninitialized when used here</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>block pointer variable %0 is uninitialized when captured by block</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>variable %0 is uninitialized when used within its own initialization</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>variable %0 is uninitialized when %select{used here|captured by block}1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuninitialized</tt></td>
+              <td itemprop="description"><q>reference %0 is not yet bound to a value when used here</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunneeded-internal-declaration</tt></td>
+              <td itemprop="description"><q>%select{function|variable}0 %1 is not needed and will not be emitted</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunneeded-internal-declaration</tt></td>
+              <td itemprop="description"><q>'static' function %0 declared in header file should be declared 'static inline'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunneeded-member-function</tt></td>
+              <td itemprop="description"><q>member function %0 is not needed and will not be emitted</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunreachable-code</tt></td>
+              <td itemprop="description"><q>will never be executed</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunsequenced</tt></td>
+              <td itemprop="description"><q>multiple unsequenced modifications to %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunsequenced</tt></td>
+              <td itemprop="description"><q>unsequenced modification and access to %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunsupported-friend</tt></td>
+              <td itemprop="description"><q>dependent nested name specifier '%0' for friend template declaration is not supported ignoring this friend declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunsupported-friend</tt></td>
+              <td itemprop="description"><q>dependent nested name specifier '%0' for friend class declaration is not supported turning off access control for %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunsupported-visibility</tt></td>
+              <td itemprop="description"><q>target does not support 'protected' visibility using 'default'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-comparison</tt></td>
+              <td itemprop="description"><q>%select{equality|inequality}0 comparison result unused</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-const-variable</tt></td>
+              <td itemprop="description"><q>unused variable %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-exception-parameter</tt></td>
+              <td itemprop="description"><q>unused exception parameter %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-function</tt></td>
+              <td itemprop="description"><q>unused function %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-label</tt></td>
+              <td itemprop="description"><q>unused label %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-member-function</tt></td>
+              <td itemprop="description"><q>unused member function %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-parameter</tt></td>
+              <td itemprop="description"><q>unused parameter %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-private-field</tt></td>
+              <td itemprop="description"><q>private field %0 is not used</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-property-ivar</tt></td>
+              <td itemprop="description"><q>ivar %0 which backs the property is not referenced in this property's accessor</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-result</tt></td>
+              <td itemprop="description"><q>ignoring return value of function declared with warn_unused_result attribute</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-value</tt></td>
+              <td itemprop="description"><q>ignoring return value of function declared with %0 attribute</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-value</tt></td>
+              <td itemprop="description"><q>expression result unused should this cast be to 'void'?</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-value</tt></td>
+              <td itemprop="description"><q>expression result unused</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-variable</tt></td>
+              <td itemprop="description"><q>unused variable %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-volatile-lvalue</tt></td>
+              <td itemprop="description"><q>expression result unused assign into a variable to force a volatile load</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wused-but-marked-unused</tt></td>
+              <td itemprop="description"><q>%0 was marked unused but was used</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wuser-defined-literals</tt></td>
+              <td itemprop="description"><q>user-defined literal suffixes not starting with '_' are reserved%select{ no literal will invoke this operator|}0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvarargs</tt></td>
+              <td itemprop="description"><q>second parameter of 'va_start' not last named argument</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvarargs</tt></td>
+              <td itemprop="description"><q>'va_start' has undefined behavior with reference types</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvarargs</tt></td>
+              <td itemprop="description"><q>second argument to 'va_arg' is of promotable type %0 this va_arg has undefined behavior because arguments will be promoted to %1</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvector-conversion</tt></td>
+              <td itemprop="description"><q>incompatible vector types %select{%diff{assigning to $ from $|assigning to different types}0,1|%diff{passing $ to parameter of type $|passing to parameter of different type}0,1|%diff{returning $ from a function with result type $|returning from function with different return type}0,1|%diff{converting $ to type $|converting between types}0,1|%diff{initializing $ with an expression of type $|initializing with expression of different type}0,1|%diff{sending $ to parameter of type $|sending to parameter of different type}0,1|%diff{casting $ to type $|casting between types}0,1}2</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvexing-parse</tt></td>
+              <td itemprop="description"><q>parentheses were disambiguated as a function declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvexing-parse</tt></td>
+              <td itemprop="description"><q>empty parentheses interpreted as a function declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvisibility</tt></td>
+              <td itemprop="description"><q>declaration of %0 will not be visible outside of this function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvisibility</tt></td>
+              <td itemprop="description"><q>redefinition of %0 will not be visible outside of this function</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvla</tt></td>
+              <td itemprop="description"><q>variable length array used</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wvla-extension</tt></td>
+              <td itemprop="description"><q>variable length arrays are a C99 feature</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wweak-template-vtables</tt></td>
+              <td itemprop="description"><q>explicit template instantiation %0 will emit a vtable in every translation unit</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wweak-vtables</tt></td>
+              <td itemprop="description"><q>%0 has no out-of-line virtual method definitions; its vtable will be emitted in every translation unit</q></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  
+
+  
+  
+      
+    
+
+  
+    <section id="lex">
+      <h1>Lexer Warnings</h1>
+
+      <table>
+        <thead>
+          <th>Warning</th>
+          <th>Message</th>
+        </thead>
+        <tbody>
+          
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-W#pragma-messages</tt></td>
+              <td itemprop="description"><q>%0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-W#warnings</tt></td>
+              <td itemprop="description"><q>%0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-W#warnings</tt></td>
+              <td itemprop="description"><q>%0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wambiguous-macro</tt></td>
+              <td itemprop="description"><q>ambiguous expansion of macro %0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wauto-import</tt></td>
+              <td itemprop="description"><q>treating #%select{include|import|include_next|__include_macros}0 as an import of module '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wbackslash-newline-escape</tt></td>
+              <td itemprop="description"><q>backslash and newline separated by space</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>identifier after literal will be treated as a user-defined literal suffix in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>'%0' is a keyword in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>digit separators are incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat-pedantic</tt></td>
+              <td itemprop="description"><q>binary integer literals are incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>raw string literals are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>unicode literals are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>universal character name referring to a control character is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'::' is treated as digraph ':' (aka '[') followed by ':' in C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>using this character in an identifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>specifying character '%0' with a universal character name is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>variadic macros are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>#line number greater than 32767 is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>C++98 requires newline at end of file</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>empty macro arguments are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc99-compat</tt></td>
+              <td itemprop="description"><q>unicode literals are incompatible with C99</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc99-compat</tt></td>
+              <td itemprop="description"><q>%select{using this character in an identifier|starting an identifier with this character}0 is incompatible with C99</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcomment</tt></td>
+              <td itemprop="description"><q>'/*' within block comment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wcomment</tt></td>
+              <td itemprop="description"><q>escaped newline between */ characters at block comment end</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdisabled-macro-expansion</tt></td>
+              <td itemprop="description"><q>disabled expansion of recursive macro</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wheader-guard</tt></td>
+              <td itemprop="description"><q>%0 is used as a header guard here, followed by #define of a different macro</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>unknown attribute '%0'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wincomplete-module</tt></td>
+              <td itemprop="description"><q>header '%0' is included in module '%1' but not listed in module map</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wincomplete-umbrella</tt></td>
+              <td itemprop="description"><q>umbrella header for module '%0' does not include header '%1'</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Winvalid-token-paste</tt></td>
+              <td itemprop="description"><q>pasting formed '%0', an invalid preprocessing token, DefaultError</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmalformed-warning-check</tt></td>
+              <td itemprop="description"><q>__has_warning expected option name (e.g. \"-Wundef\")</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnewline-eof</tt></td>
+              <td itemprop="description"><q>no newline at end of file</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-character</tt></td>
+              <td itemprop="description"><q>null character ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-character</tt></td>
+              <td itemprop="description"><q>null character(s) preserved in string literal</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wnull-character</tt></td>
+              <td itemprop="description"><q>null character(s) preserved in character literal</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtrigraphs</tt></td>
+              <td itemprop="description"><q>ignored trigraph would end block comment</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wtrigraphs</tt></td>
+              <td itemprop="description"><q>trigraph ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wundef</tt></td>
+              <td itemprop="description"><q>%0 is not defined, evaluates to 0</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunicode</tt></td>
+              <td itemprop="description"><q>universal character names are only valid in C99 or C++ treating as '\\' followed by identifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunicode</tt></td>
+              <td itemprop="description"><q>\\%0 used with no following hex digits treating as '\\' followed by identifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunicode</tt></td>
+              <td itemprop="description"><q>incomplete universal character name treating as '\\' followed by identifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunicode</tt></td>
+              <td itemprop="description"><q>universal character name refers to a surrogate character</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunknown-pragmas</tt></td>
+              <td itemprop="description"><q>unknown pragma ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunknown-pragmas</tt></td>
+              <td itemprop="description"><q>pragma STDC FENV_ACCESS ON is not supported, ignoring pragma</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wunused-macros</tt></td>
+              <td itemprop="description"><q>macro is not used</q></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  
+
+  
+  
+      
+    
+
+  
+    <section id="parse">
+      <h1>Parser Warnings</h1>
+
+      <table>
+        <thead>
+          <th>Warning</th>
+          <th>Message</th>
+        </thead>
+        <tbody>
+          
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Warc-bridge-casts-disallowed-in-nonarc</tt></td>
+              <td itemprop="description"><q>'%0' casts have no effect when not using ARC</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wattributes</tt></td>
+              <td itemprop="description"><q>unknown __declspec attribute %0 ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wavailability</tt></td>
+              <td itemprop="description"><q>'unavailable' availability overrides all other availability information</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>use of right-shift operator ('') in template argument will require parentheses in C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++11-compat</tt></td>
+              <td itemprop="description"><q>'auto' storage class specifier is redundant and incompatible with C++11</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-c++11-compat</tt></td>
+              <td itemprop="description"><q>'decltype(auto)' type specifier is incompatible with C++ standards before C++1y</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>range-based for loop is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>alias declarations are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>in-class initialization of non-static data members is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>defaulted function definitions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>rvalue references are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>reference qualifiers on functions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>inline namespaces are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>generalized initializer lists are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>trailing return types are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>enumeration types with a fixed underlying type are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>alignof expressions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'%0' keyword is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'decltype' type specifier is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>deleted function definitions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>consecutive right angle brackets are incompatible with C++98 (use '> >')</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>static_assert declarations are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>scoped enumerations are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>lambda expressions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>attributes are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'alignas' is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>noexcept specifications are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>literal operators are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>noexcept expressions are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat</tt></td>
+              <td itemprop="description"><q>'nullptr' is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>extra '' outside of a function is incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>extern templates are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wc++98-compat-pedantic</tt></td>
+              <td itemprop="description"><q>commas at the end of enumerator lists are incompatible with C++98</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdangling-else</tt></td>
+              <td itemprop="description"><q>add explicit braces to avoid dangling else</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated</tt></td>
+              <td itemprop="description"><q>Use of 'long' with '__vector' is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-declarations</tt></td>
+              <td itemprop="description"><q>use of C-style parameters in Objective-C method declarations is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wdeprecated-register</tt></td>
+              <td itemprop="description"><q>'register' storage class specifier is deprecated</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wduplicate-decl-specifier</tt></td>
+              <td itemprop="description"><q>duplicate '%0' declaration specifier</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wextra-semi</tt></td>
+              <td itemprop="description"><q>extra ';' after member function definition</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wextra-tokens</tt></td>
+              <td itemprop="description"><q>"extra tokens at the end of '#pragma omp %0' are ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wgcc-compat</tt></td>
+              <td itemprop="description"><q>GCC does not allow %0 attribute in this position on a function definition</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wignored-attributes</tt></td>
+              <td itemprop="description"><q>attribute %0 ignored, because it is not attached to a declaration</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmicrosoft-exists</tt></td>
+              <td itemprop="description"><q>dependent %select{__if_not_exists|__if_exists}0 declarations are ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wmissing-selector-name</tt></td>
+              <td itemprop="description"><q>%0 used as the name of the previous parameter rather than as part of the selector</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsemicolon-before-method-body</tt></td>
+              <td itemprop="description"><q>semicolon before method body is ignored</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wsource-uses-openmp</tt></td>
+              <td itemprop="description"><q>"unexpected '#pragma omp ...' in program</q></td>
+            </tr>
+          
+            <tr itemscope itemtype="http://schema.org/StructuredValue">
+              <td itemprop="name"><tt>-Wstatic-inline-explicit-instantiation</tt></td>
+              <td itemprop="description"><q>ignoring '%select{static|inline}0' keyword on explicit template instantiation</q></td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </section>
+  
+
+
+    </div>
+
+    <footer>
+      <p>Created by <a href="https://twitter.com/mattt" rel="nofollow">Mattt Thompson</a>, and released under the <a href="http://opensource.org/licenses/NCSA" rel="license">NCSA License</a>. Source code <a href="https://github.com/mattt/fuckingclangwarnings.com" rel="nofollow">available on GitHub</a>.</p>
+
+      <p>Generated from <a href="http://clang.llvm.org/get_started.html#build">Clang's source code</a>, through a combination of regular expressions, find &amp; replace, and scripting.</p>
+
+      <p><em>Like Objective-C and swearing, but can't remember block syntax? <a href="http://fuckingblocksyntax.com">There's a site for that, too</a>.</em></p>
+
+      <p>Last updated <time datetime="2015-03-06T20:01:37+00:00">March 06, 2015</time>.</p>
+    </footer>
+  </div>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2079355-27', 'fuckingclangwarnings.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>
