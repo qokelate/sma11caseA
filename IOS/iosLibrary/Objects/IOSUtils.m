@@ -8,14 +8,19 @@
 
 #import "IOSUtils.h"
 
+#undef vScreenWidth
+#undef vScreenHeight
+#undef vSystemVersion
+
 CGFloat vScreenWidth = 0.0f;
 CGFloat vScreenHeight = 0.0f;
+double vSystemVersion = 0.0;
 
 const CGFloat kSystemTabBarHeight        = 44.0f;
 const CGFloat kSystemNavigationBarHeight = 44.0f;
 const CGFloat kSystemStatusBarHeight     = 20.0f;
 
-static CADisplayLink *gs_fpsLink = nil;
+static __unsafe_unretained CADisplayLink *gs_fpsLink = nil;
 static size_t gs_fpsCount = 0;
 
 @interface IOSUtils()
@@ -49,6 +54,7 @@ void fpsStop()
     CGSize size = [UIScreen mainScreen].bounds.size;
     vScreenWidth = size.width;
     vScreenHeight = size.height;
+    vSystemVersion = [UIDevice currentDevice].systemVersion.doubleValue;
 }
 
 + (void)fpsTick:(CADisplayLink *)link

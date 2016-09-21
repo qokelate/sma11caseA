@@ -1,9 +1,9 @@
 //
 //  Crypt.m
-//  IBOS-IOS
+//  sma11case
 //
-//  Created by IBOS on 15/4/20.
-//  Copyright (c) 2015年 IBOS. All rights reserved.
+//  Created by sma11case on 15/4/20.
+//  Copyright (c) 2015年 sma11case. All rights reserved.
 //
 
 #import "cryptor.h"

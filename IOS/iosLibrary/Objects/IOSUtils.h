@@ -12,6 +12,17 @@
 
 extern CGFloat vScreenWidth;
 extern CGFloat vScreenHeight;
+extern double vSystemVersion;
+
+#if IS_DEBUG_MODE
+#define vScreenWidth (vScreenWidth+0.0f)
+#define vScreenHeight (vScreenHeight+0.0f)
+#define vSystemVersion (vSystemVersion+0.0f)
+#endif
+
+#define kScreenWidth  vScreenWidth
+#define kScreenHeight vScreenHeight
+#define kSystemVersion vSystemVersion
 
 extern const CGFloat kSystemTabBarHeight        ;
 extern const CGFloat kSystemNavigationBarHeight ;

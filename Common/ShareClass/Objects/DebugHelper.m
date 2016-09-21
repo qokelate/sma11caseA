@@ -1,9 +1,9 @@
 //
 //  DebugHelper.m
-//  ibosvip
+//  sma11casevip
 //
 //  Created by sma11case on 15/8/4.
-//  Copyright (c) 2015年 ibos. All rights reserved.
+//  Copyright (c) 2015年 sma11case. All rights reserved.
 //
 
 #import "DebugHelper.h"

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+#import "../Config.h"
 
 typedef NS_ENUM(NSUInteger, ImageType)
 {
@@ -20,7 +21,7 @@ typedef NS_ENUM(NSUInteger, ImageType)
 
 typedef void(^SaveAlbumBlock)(UIImage *image, NSError *error);
 
-UIImage *getScreenShot();
+UIImage *getScreenShot(BOOL onlyKeyWindow);
 ImageType getImageTypeFromData(NSData *data);
 
 @interface UIImage(sma11case_IOS)
@@ -35,10 +36,5 @@ ImageType getImageTypeFromData(NSData *data);
 + (UIImage *)generateImageWithColor:(UIColor *)color size: (CGSize)size;
 @end
 
-@interface UIImage (ImageEffects)
-- (UIImage *)applyLightEffect;
-- (UIImage *)applyExtraLightEffect;
-- (UIImage *)applyDarkEffect;
-- (UIImage *)applyTintEffectWithColor:(UIColor *)tintColor;
-- (UIImage *)applyBlurWithRadius:(CGFloat)blurRadius tintColor:(UIColor *)tintColor saturationDeltaFactor:(CGFloat)saturationDeltaFactor maskImage:(UIImage *)maskImage;
-@end
+
+

@@ -22,6 +22,5 @@
 - (id)getWeakAssociatedObjectWithKey: (NSString *)key;
 - (void)removeAssociatedObjectWithKey: (NSString *)key;
 - (void)removeAssociatedObjects;
-- (void *)addDeallocBlock: (EmptyBlock)block;
 @end
 

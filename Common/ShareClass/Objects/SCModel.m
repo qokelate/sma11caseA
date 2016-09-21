@@ -20,6 +20,11 @@ MakeStaticChar(gs_cached);
 @implementation SCModel
 ImpIsRootClass(SCModel)
 
++ (BOOL)cachePropertyList
+{
+    return YES;
+}
+
 + (instancetype)modelWithDictionary: (NSDictionary *)dictionary
 {
     id temp = NewClass(self);
@@ -144,11 +149,6 @@ ImpIsRootClass(SCModel)
 - (id)valueForUndefinedKey:(NSString *)key
 {
     return nil;
-}
-
-+ (BOOL)cachePropertyList
-{
-    return YES;
 }
 
 - (NSString *)description

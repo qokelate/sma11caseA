@@ -29,6 +29,16 @@
 #define UseExpeAPI 0UL
 #endif
 
+// enable 3rd category
+#ifndef UseExtCategory
+#define UseExtCategory 0UL
+#endif
+
+// define system constants
+#ifndef DefineSystemConstants
+#define DefineSystemConstants 0UL
+#endif
+
 #ifndef PLAT_IOS
 #if (TARGET_OS_IPHONE && !TARGET_OS_MAC)
 #define PLAT_IOS 1UL
@@ -70,6 +80,7 @@
 #import <UIKit/UIKit.h>
 
 #if (!IS_DEV_MODE && __has_include( <iosFramework/iosFramework.h> ))
+#define HaveIOSFramework 1UL
 #import <iosFramework/iosFramework.h>
 #endif
 #endif
@@ -78,6 +89,7 @@
 #import <Cocoa/Cocoa.h>
 
 #if (!IS_DEV_MODE && __has_include( <osxFramework/osxFramework.h> ))
+#define HaveOSXFramework 1UL
 #import <osxFramework/osxFramework.h>
 #endif
 #endif

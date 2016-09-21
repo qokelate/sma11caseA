@@ -11,7 +11,7 @@
 @implementation ImageRenamer
 + (void)formatNameWithPath: (NSString *)path param: (id)param
 {
-    [NSFM enumFilesWithPath:path userParam:param block:^BOOL(NSString *dirPath, NSString *fileName, BOOL isDir, id userParam) {
+    [NSFM enumFilesWithPath:path block:^BOOL(NSString *dirPath, NSString *fileName, BOOL isDir) {
         
         NSString *path = [dirPath stringByAppendingPathComponent:fileName];
         

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UITableView(sma11case_IOS)
+- (void)reloadDataWithCompletion: (dispatch_block_t)block; // support async call
 - (UIControl *)tableIndexView; // 需要注意调用时机,在cellForRowAtIndexPath调用最适合
 @end

@@ -12,14 +12,7 @@
 #import "WeakArray.h"
 #import "../IsRootClass.m"
 #import "../Category/Category.h"
-
-@interface NSArray (sma11case_ShareClass_Internal)
-- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level mustNil:(id)mustNil;
-@end
-
-@interface NSDictionary (sma11case_ShareClass_Internal)
-- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level mustNil:(id)mustNil;
-@end
+#import "../TPObjects/TPObjects.h"
 
 @implementation WeakDictionary
 {
@@ -104,9 +97,9 @@
     return temp;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len
+- (void)setObject:(id)obj forKeyedSubscript:(id <NSCopying>)key
 {
-    return [_buffer countByEnumeratingWithState:state objects:buffer count:len];
+    [self setObject:obj forKey:key];
 }
 
 - (NSUInteger)count

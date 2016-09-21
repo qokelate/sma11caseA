@@ -8,7 +8,6 @@
 
 #import "CoreNetwork.h"
 #import "CoreStorage.h"
-#import "CoreThread.h"
 #import "CoreTools.h"
 #import "DebugHelper.h"
 #import "MsgDispatcher.h"

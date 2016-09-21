@@ -22,11 +22,11 @@ id getSCNil();
 typedef void(*pfSendMessage0)(id target, SEL selector, ...);
 typedef id(*pfSendMessage1)(id target, SEL selector, ...);
 
-extern pfSendMessage0 sc_SendMessage0;
-#define sc_SendMessage0(...) sc_SendMessage0(__VA_ARGS__)
+extern pfSendMessage0 sc_msgSend0;
+#define sc_msgSend0(...) sc_msgSend0(__VA_ARGS__)
 
-extern pfSendMessage1 sc_SendMessage1;
-#define sc_SendMessage1(...) sc_SendMessage1(__VA_ARGS__)
+extern pfSendMessage1 sc_msgSend1;
+#define sc_msgSend1(...) sc_msgSend1(__VA_ARGS__)
 
 //#define performSelector0(...) sc_SendMessage0(__VA_ARGS__)
 //#define performSelector1(...) sc_SendMessage1(__VA_ARGS__)
@@ -66,8 +66,8 @@ void mergeDictionaryIntoDictonary(NSMutableDictionary *output, NSDictionary *fir
 void runBlockWithMain(dispatch_block_t block);
 void runBlockWithAsync(dispatch_block_t block);
 
-void runBlockWithGroup(dispatch_queue_t queue, dispatch_block_t finishedBlock, dispatch_block_t block, ...);
-#define runBlockWithGroup(...) runBlockWithGroup(__VA_ARGS__, nil)
+void syncBlockWithGroup(dispatch_queue_t queue, dispatch_block_t finishedBlock, dispatch_block_t block, ...);
+#define syncBlockWithGroup(...) syncBlockWithGroup(__VA_ARGS__, nil)
 
 void runBlockWithMainEx(dispatch_block_t block, ...);
 #define runBlockWithMainEx(...) runBlockWithMainEx(__VA_ARGS__, nil)

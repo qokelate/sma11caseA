@@ -10,8 +10,16 @@
 #import "../Config.h"
 
 @implementation UITableView(sma11case_IOS)
+- (void)reloadDataWithCompletion: (dispatch_block_t)block
+{
+    dispatch_async(GCDMainQueue, ^{
+        [self reloadData];
+        if (block) dispatch_async(GCDMainQueue, block);
+    });
+}
+
 - (UIControl *)tableIndexView
 {
-    return [self findSubviewWithClass:NSClassFromString(@"UITableViewIndex") maxCount:1][0];
+    return [self findSubviewWithClass:NSClassFromString(@"UITableViewIndex") maxCount:1].firstObject;
 }
 @end

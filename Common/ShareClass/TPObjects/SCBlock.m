@@ -7,6 +7,8 @@
 //
 
 #import "SCBlock.h"
+#import "../Macros.h"
+#import <objc/runtime.h>
 
 @implementation SCBlock
 {
@@ -34,15 +36,14 @@
     }
     return self;
 }
+@end
 
-//- (void)setSelectorWithParam: (id)object block: (NSObjectBlock)block
-//{
-//    _block = block;
-//    _blockParam = object;
-//}
-//
-//- (void)objectSelector: (id)param
-//{
-//    if (_block) _block(_blockParam);
-//}
+@implementation NSObject(sma11case_Extend)
+- (void *)addDeallocBlock: (EmptyBlock)block
+{
+    SCBlock *temp = [SCBlock blockWithDeallocBlock:block];
+    void *ptr = FBridge(temp, id, void*);
+    objc_setAssociatedObject(self, ptr, temp, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    return ptr;
+}
 @end

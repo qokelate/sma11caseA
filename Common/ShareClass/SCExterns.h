@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 sma11case. All rights reserved.
 //
 
+#import "Config.h"
+
 #define BinaryNumberKeys  "01"
 #define OctalNumberKeys   "01234567"
 #define DecimalNumberKeys "0123456789"
@@ -26,6 +28,7 @@ extern char *const kUpperCaseKeys;
 extern char *const kAlphabetKeys;
 extern char *const kBase64Keys;
 
+#if DefineSystemConstants
 extern NSString *const AVCaptureSessionPresetPhoto;
 extern NSString *const AVCaptureSessionPresetHigh;
 extern NSString *const AVCaptureSessionPresetMedium;
@@ -37,3 +40,5 @@ extern NSString *const AVCaptureSessionPreset1920x1080;
 extern NSString *const AVCaptureSessionPresetiFrame960x540;
 extern NSString *const AVCaptureSessionPresetiFrame1280x720;
 extern NSString *const AVCaptureSessionPresetInputPriority;
+#endif
+

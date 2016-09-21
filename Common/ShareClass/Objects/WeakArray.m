@@ -11,10 +11,10 @@
 #import "../IsRootClass.m"
 #import "../Category/Category.h"
 #import "../Functions.h"
+#import "../TPObjects/TPObjects.h"
 
-@interface WeakArray ()
-
-@end
+#undef UseExpeAPI
+#define UseExpeAPI 0UL
 
 @implementation WeakArray
 {
@@ -56,7 +56,7 @@
     if (state)
     {
         CopyAsWeak(self, ws);
-        CopyAsWeak(anObject, wb);
+        CopyAsAssign(anObject, wb);
         [anObject addDeallocBlock:^{
             [ws removeObject:wb];
         }];
@@ -71,22 +71,10 @@
     return unboxWeakReference(anObject);
 }
 
-- (id)objectAtIndexedSubscript:(NSUInteger)idx
-{
-    id anObject = [_buffer objectAtIndex:idx];
-    return unboxWeakReference(anObject);
-}
-
 - (void)insertObject:(id)anObject atIndex:(NSUInteger)index
 {
     id boxObj = boxAsWeakReference(anObject);
     [_buffer insertObject:boxObj atIndex:index];
-}
-
-- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx
-{
-    id boxObj = boxAsWeakReference(obj);
-    _buffer[idx] = boxObj;
 }
 
 - (void)removeAllObjects
@@ -113,11 +101,6 @@
     return _buffer.count;
 }
 
-- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(__unsafe_unretained id  _Nonnull *)buffer count:(NSUInteger)len
-{
-    return [_buffer countByEnumeratingWithState:state objects:buffer count:len];
-}
-
 - (NSMutableArray *)toArray
 {
     NSMutableArray *temp = NewMutableArray();
@@ -135,5 +118,101 @@
 {
     return [[self toArray] description];
 }
+
+#pragma mark SCArrayEnumeration
+- (id)objectAtIndexedSubscript:(NSUInteger)idx
+{
+    id anObject = [_buffer objectAtIndex:idx];
+    return unboxWeakReference(anObject);
+}
+
+- (void)setObject:(id)obj atIndexedSubscript:(NSUInteger)idx
+{
+    id boxObj = boxAsWeakReference(obj);
+    _buffer[idx] = boxObj;
+}
+
+- (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len
+{
+    if(0 == state->state)
+    {
+        state->mutationsPtr = FBridge(self, id, void*);
+        state->extra[0] = 0;
+        state->state = 1;
+    }
+    
+    unsigned long copied = state->extra[0];
+    
+    NSUInteger count = _buffer.count;
+    if (count == copied) return 0;
+    
+    state->itemsPtr = buffer;
+    NSUInteger result = 0;
+    
+    for (NSUInteger a = 0; a < len; ++a)
+    {
+        __unsafe_unretained id obj = unboxWeakReference(_buffer[copied++]);
+        if (copied == count) break;
+        if (nil == obj) continue;
+        
+        buffer[result++] = obj;
+    }
+    
+    state->extra[0] = copied;
+    
+    return result;
+}
+
+#if UseExpeAPI
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level
+{
+    return [self descriptionWithLocale:locale indent:level mustNil:nil];
+}
+
+- (NSString *)descriptionWithLocale:(id)locale indent:(NSUInteger)level mustNil:(id)mustNil
+{
+    NSMutableString *temp = mustNil;
+    
+    if (nil == temp) {
+        temp = [NSMutableString stringWithCapacity:StringBufferLength];
+    }
+    
+    NSString *prefix = [temp regexpFirstMatch:@"[^\\r\\n]+$"];
+    [temp appendString:@"(\n"];
+    
+    char *buffer = makeCharacterWithCount(prefix.length + IdentSpace, ' ');
+    if (self.count) {
+        for (NSObject *obj in self) {
+            if (IsKindOfClass(obj, NSArray)) {
+                [temp appendFormat:@"%s", buffer];
+                [FType(NSArray *, obj) descriptionWithLocale:locale indent:level + 1 mustNil:temp];
+                [temp appendString:@",\n"];
+            } else if (IsKindOfClass(obj, NSDictionary)) {
+                [temp appendFormat:@"%s", buffer];
+                [FType(NSDictionary *, obj) descriptionWithLocale:locale indent:level + 1 mustNil:temp];
+                [temp appendString:@",\n"];
+            } else if (IsKindOfClass(obj, NSString)) {
+                [temp appendFormat:@"%s\"%@\",\n", buffer, obj];
+            } else {[temp appendFormat:@"%s%@,\n", buffer, obj]; }
+        }
+        
+        [temp replaceCharactersInRange:NSMakeRange(temp.length - 2, 2) withString:@"\n"];
+    }
+    
+    if (level)
+    {
+        buffer[prefix.length] = 0;
+        [temp appendFormat:@"%s", buffer];
+    }
+    
+    [temp appendString:@")"];
+    
+    if (buffer) {
+        free(buffer);
+    }
+    
+    return temp;
+}
+#endif
 @end
 

@@ -11,12 +11,14 @@
 typedef NS_ENUM(NSUInteger, SCKeyboardState)
 {
     SCKeyboardStateUnknow = 0,
-    SCKeyboardStateWillShow,
-    SCKeyboardStateDidShow,
-    SCKeyboardStateWillChange,
-    SCKeyboardStateDidChange,
-    SCKeyboardStateWillHide,
-    SCKeyboardStateDidHide
+    SCKeyboardStateShow,
+    SCKeyboardStateHide,
+//    SCKeyboardStateWillShow,
+//    SCKeyboardStateDidShow,
+//    SCKeyboardStateWillChange,
+//    SCKeyboardStateDidChange,
+//    SCKeyboardStateWillHide,
+//    SCKeyboardStateDidHide
 };
 
 @protocol SCKeyboardManagerDelegate <NSObject>

@@ -45,7 +45,7 @@ ImpSharedMethod()
 
 - (void)addKeyboardNotify
 {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShowNotification:) name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChangeFrameNotification:) name:UIKeyboardWillChangeFrameNotification object:nil];
     
@@ -56,13 +56,14 @@ ImpSharedMethod()
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
     
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+//    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
 - (void)keyboardWillChangeFrameNotification:(NSNotification *)notify
 {
+    _state = SCKeyboardStateShow;
     id delegate = self.delegate;
     if (delegate && [delegate respondsToSelector:@selector(keyboardWillChangeFrameNotification:)]) {
         [delegate keyboardWillChangeFrameNotification:notify];
@@ -71,6 +72,7 @@ ImpSharedMethod()
 
 - (void)keyboardWillShowNotification:(NSNotification *)notify
 {
+    _state = SCKeyboardStateShow;
     id delegate = self.delegate;
     if (delegate && [delegate respondsToSelector:@selector(keyboardWillShowNotification:)]) {
         [delegate keyboardWillShowNotification:notify];
@@ -79,6 +81,7 @@ ImpSharedMethod()
 
 - (void)keyboardWillHideNotification:(NSNotification *)notify
 {
+    _state = SCKeyboardStateHide;
     id delegate = self.delegate;
     if (delegate && [delegate respondsToSelector:@selector(keyboardWillHideNotification:)]) {
         [delegate keyboardWillHideNotification:notify];

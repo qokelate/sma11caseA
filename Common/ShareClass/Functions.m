@@ -33,8 +33,8 @@
 #define valueWithCPEdgeInsets valueWithEdgeInsets
 #endif
 
-pfSendMessage0 sc_SendMessage0 = (pfSendMessage0)objc_msgSend;
-pfSendMessage1 sc_SendMessage1 = (pfSendMessage1)objc_msgSend;
+pfSendMessage0 sc_msgSend0 = (pfSendMessage0)objc_msgSend;
+pfSendMessage1 sc_msgSend1 = (pfSendMessage1)objc_msgSend;
 
 id getSCNil()
 {
@@ -265,7 +265,6 @@ BOOL getIvarValue(id instance, const char *name, size_t size, void *buffer)
     if (0 == offset) return NO;
     
     void *ptr = FBridge(instance, id, void*) + offset;
-    memset(buffer, 0, size);
     memcpy(buffer, ptr, size);
     return YES;
 }
@@ -404,11 +403,11 @@ inline void runBlockWithMain(dispatch_block_t block)
 
 inline void runBlockWithAsync(dispatch_block_t block)
 {
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), block);
+    dispatch_async(GCDDefaultQueue, block);
 }
 
-#undef runBlockWithGroup
-inline void runBlockWithGroup(dispatch_queue_t queue, dispatch_block_t finishedBlock, dispatch_block_t block, ...)
+#undef syncBlockWithGroup
+void syncBlockWithGroup(dispatch_queue_t queue, dispatch_block_t finishedBlock, dispatch_block_t block, ...)
 {
     va_list ap;
     va_start(ap, block);

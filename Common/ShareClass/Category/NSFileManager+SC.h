@@ -26,10 +26,10 @@ typedef NS_ENUM(NSUInteger, FileSizeType)
     FileSizeTypeDiskSize,
 };
 
-typedef BOOL(^EnumFileBlock)(NSString *dirPath, NSString *fileName, BOOL isDir, id userParam);
+typedef BOOL(^EnumFileBlock)(NSString *dirPath, NSString *fileName, BOOL isDir);
 
 @interface NSFileManager(sma11case_ShareClass)
-- (BOOL)enumFilesWithPath: (NSString *)path userParam: (id)param block: (EnumFileBlock)block;
+- (BOOL)enumFilesWithPath: (NSString *)path block: (EnumFileBlock)block;
 - (NSMutableArray *)getFilesWithRootFolder: (NSString *)sourceDir fileTypes: (NSArray *)types ignoringCase: (BOOL)icase;
 - (unsigned long long)fileSizeAtPath: (NSString *)path;
 - (unsigned long long)folderSizeWithPath:(NSString *)filePath type:(FileSizeType)type;

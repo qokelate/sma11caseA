@@ -9,16 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "SCRoot.h"
 
-typedef void(^SCFakeBlock)(id<NSObject> target);
 typedef void(^EnumIvarsBlock)(NSString *ivarName, id value);
+typedef id<NSObject>(^SCFakeDebugBlock)(id<NSObject> target);
 
 @class NSKeyValueProperty;
 
-@interface SCFakeObject : SCRoot
-@property (nonatomic, strong) id target;
+void enumIvarsWithObject(id object, EnumIvarsBlock block);
+void fakeObject(id target, SCFakeDebugBlock b1, ...);
 
-+ (void)enumIvarsWithObject: (id)object block: (EnumIvarsBlock)block;
-+ (void)fakeObjectWithTarget: (id)target block: (SCFakeBlock)block;
+@interface SCFakeObject : SCRoot
 + (instancetype)fakeObjectWithTarget: (id)target;
 - (instancetype)initWithTarget: (id)target;
 @end

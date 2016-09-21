@@ -154,13 +154,5 @@ MakeStaticChar(gs_userAssociated_atom);
     objc_setAssociatedObject(self, ptr, nil, OBJC_ASSOCIATION_ASSIGN);
     objc_removeAssociatedObjects(self);
 }
-
-- (void *)addDeallocBlock: (EmptyBlock)block
-{
-    SCBlock *temp = [SCBlock blockWithDeallocBlock:block];
-    void *ptr = FBridge(temp, id, void*);
-    objc_setAssociatedObject(self, ptr, temp, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    return ptr;
-}
 @end
 

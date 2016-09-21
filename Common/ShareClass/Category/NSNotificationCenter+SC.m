@@ -9,15 +9,17 @@
 #import "NSNotificationCenter+SC.h"
 #import "NSObject+SC.h"
 #import "../Macros.h"
+#import "../TPObjects/TPObjects.h"
 
 @implementation NSNotificationCenter(sma11case_shareClass)
 - (void)addObserverSafe:(id)observer selector:(SEL)aSelector name:(NSString *)aName object:(id)anObject
 {
     [self addObserver:observer selector:aSelector name:aName object:anObject];
     
-    CopyAsWeak(observer, ws);
+    CopyAsWeak(self, ws);
+    CopyAsAssign(observer, obs);
     [observer addDeallocBlock:^{
-        [ws removeObserver:ws];
+        [ws removeObserver:obs];
     }];
 }
 @end

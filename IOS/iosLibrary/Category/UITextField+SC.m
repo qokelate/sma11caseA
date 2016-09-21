@@ -21,7 +21,17 @@
 
 - (void)setPlaceholder: (NSString *)text color:(UIColor *)color
 {
-    NSDictionary *temp = @{NSForegroundColorAttributeName:color};
+    NSDictionary *temp = [self.attributedPlaceholder attributesAtIndex:0 effectiveRange:NULL];
+    if (nil == temp)
+    {
+        temp = @{NSForegroundColorAttributeName:color};
+    }
+    else
+    {
+        NSMutableDictionary *attributes = [temp mutableCopy];
+        attributes[NSForegroundColorAttributeName] = color;
+        temp = attributes;
+    }
     self.attributedPlaceholder = [[NSAttributedString alloc] initWithString:text attributes:temp];
 }
 

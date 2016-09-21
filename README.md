@@ -29,4 +29,4 @@ build 完成后`build/ios`|`build/osx` 为对应静态库
 * 为对应平台依赖库(可选, 在`build settings`关闭功能块后无依赖, 本人不喜欢使用POD, 因而把POD转化为依赖库管理)
 
 ## ETC
-### 略懂 IOS/OSX/Linux/Windows, 喜欢被大神糟蹋, 欢迎来虐 `udf.q@qq.com`
+### 自诩通晓 IOS/OSX/Linux/Windows, 喜欢被大神糟蹋, 欢迎炮轰 `udf.q@qq.com`

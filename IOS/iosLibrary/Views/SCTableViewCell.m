@@ -43,7 +43,7 @@ ImpDebugAllocMethod()
     
     if (view)
     {
-        UIButton *button = [view findSubviewWithClass:NSClassFromString(@"_UITableViewCellActionButton") maxCount:1][0];
+        UIButton *button = [view findSubviewWithClass:NSClassFromString(@"_UITableViewCellActionButton") maxCount:1].firstObject;
         
         if (button)
         {

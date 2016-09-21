@@ -11,7 +11,7 @@
 
 @interface SCFloatWindow : UIWindow
 @property (nonatomic, assign) BOOL movable;
-@property (nonatomic, weak, readonly) UIView *contentView;
+@property (nonatomic, unsafe_unretained, readonly) UIView *contentView;
 
 - (instancetype)initWithFrame:(CGRect)frame;
 - (void)locationChange:(UIPanGestureRecognizer*)p;

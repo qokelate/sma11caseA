@@ -15,7 +15,7 @@
 #define LogAFNErrorRequest(x) MLog(@"AFN error request:\n%@", GetAFNErrorRequest(x))
 
 // 编码宏
-#define URLEncode(x)  [(x) stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]
+#define URLEncode(x)  [(x) stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]]
 #define URLDecode(x)  urlDecode(x)
 
 NSString *mergeRequestURL(NSString *baseURL, NSDictionary *getParam);

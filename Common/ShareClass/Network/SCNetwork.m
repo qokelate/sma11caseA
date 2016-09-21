@@ -14,6 +14,44 @@
 #import "../Macros.h"
 #import <objc/runtime.h>
 
+#define kCallbackCount 65536UL
+size_t kCURLInvalidIndex = (kCallbackCount - 1);
+static id curl_blocks[kCallbackCount] = {0};
+static void* curl_params[kCallbackCount] = {0};
+
+static size_t curl_callback(void *p1, size_t m, size_t n, void *p2)
+{
+    size_t idx = (size_t)p2;
+    void  *px = curl_params[idx];
+    CURLCallbackBlock block = curl_blocks[idx];
+    size_t res = m * n;
+    if (block) res = block(p1, res, px);
+    return res;
+}
+
+void curl_releaseCallback(size_t index)
+{
+    curl_blocks[index] = nil;
+    curl_params[index] = NULL;
+}
+
+size_t curl_setCallback(CURL *curl, CURLoption funcOption, CURLoption paramOption, void *param, CURLCallbackBlock block)
+{
+    size_t idx = 0;
+    while (idx < kCallbackCount)
+    {
+        if (nil == curl_blocks[idx]) break;
+    }
+    
+    curl_blocks[idx] = block;
+    curl_params[idx] = param;
+    
+    curl_easy_setopt(curl, funcOption, curl_callback);
+    curl_easy_setopt(curl, paramOption, idx);
+    
+    return idx;
+}
+
 @implementation SCNetworkInfo
 
 @end

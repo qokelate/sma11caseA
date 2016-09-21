@@ -33,21 +33,21 @@
 
 - (void)parseWithData: (NSData *)data delegate:(id<MWFeedParserDelegate>)parserDelegate
 {
-    NSXMLParser *temp = [[NSXMLParser alloc] initWithData:data];
-    if (temp)
-    {
-        temp.delegate = self;
-        
-        [self reset];
-        feedParser = temp;
-        delegate = parserDelegate;
-        [feedParser setShouldProcessNamespaces:YES];
-        [feedParser parse];
-        feedParser = nil;
-        return;
-    }
-    
-    [self parsingFailedWithErrorCode:MWErrorCodeFeedParsingError andDescription:@"Feed not a valid XML document"];
+//    NSXMLParser *temp = [[NSXMLParser alloc] initWithData:data];
+//    if (temp)
+//    {
+//        temp.delegate = self;
+//        
+//        [self reset];
+//        feedParser = temp;
+//        delegate = parserDelegate;
+//        [feedParser setShouldProcessNamespaces:YES];
+//        [feedParser parse];
+//        feedParser = nil;
+//        return;
+//    }
+//    
+//    [self parsingFailedWithErrorCode:MWErrorCodeFeedParsingError andDescription:@"Feed not a valid XML document"];
 }
 @end
 #endif

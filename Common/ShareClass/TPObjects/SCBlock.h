@@ -10,10 +10,12 @@
 #import "SCRoot.h"
 #import "../typedef.h"
 
+@interface NSObject(sma11case_Extend)
+- (void *)addDeallocBlock: (EmptyBlock)block;
+@end
+
 @interface SCBlock : SCRoot
 + (instancetype)blockWithDeallocBlock: (EmptyBlock)block;
 - (instancetype)initWithDeallocBlock: (EmptyBlock)block;
-
-//- (void)setSelectorWithParam: (id)object block: (NSObjectBlock)block;
-//- (void)objectSelector: (id)param;
 @end
+

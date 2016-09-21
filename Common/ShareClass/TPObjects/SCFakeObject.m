@@ -10,6 +10,7 @@
 #import "../Functions.h"
 #import "SCValue.h"
 #import "../CrossPlatform/CrossPlatform.h"
+#import "../Config.h"
 #import <objc/runtime.h>
 
 #define SCLog(...) //MLog(__VA_ARGS__)
@@ -34,34 +35,23 @@ return result;\
 
 #define ImpFakeMethodWithInt(x)        ImpFakeMethod(int, x, "_" #x)
 
-@implementation SCFakeObject
-+ (void)fakeObjectWithTarget: (id)target block: (SCFakeBlock)block
+void fakeObject(id target, SCFakeDebugBlock b1, ...)
 {
-    SCLog(@"fakeObjectTarget: %p <%@:%@>", target, [target class], [target superclass]);
-    id<NSObject> temp = [self fakeObjectWithTarget:target];
-    block(temp);
-}
-
-+ (instancetype)fakeObjectWithTarget: (id)target
-{
-    return [[self alloc] initWithTarget:target];
-}
-
-- (instancetype)initWithTarget: (id)target
-{
-    if (self = [super init])
+    va_list ap;
+    va_start(ap, b1);
+    while (b1)
     {
-        _target = target;
+        target = b1(target);
+        b1 = va_arg(ap, SCFakeDebugBlock);
     }
-    return self;
 }
 
-+ (void)enumIvarsWithObject: (id)object block: (EnumIvarsBlock)block
+void enumIvarsWithObject(id object, EnumIvarsBlock block)
 {
     NSDictionary *temp = getIvarListWithClass([object class]);
     
     const char *type = NULL;
- 
+    
     SCLog(@"CLASS: %@ SuperClass: %@, ivars: %@", [object class], [object superclass], temp);
     for (NSString *key in temp.allKeys)
     {
@@ -85,9 +75,30 @@ return result;\
         block(key, output);
     }
 }
-@end
 
-@implementation SCFakeObject(SCFakeObject_NSKeyValueObservationInfo)
+
+@implementation SCFakeObject
+{
+    id _target;
+}
+
++ (instancetype)fakeObjectWithTarget: (id)target
+{
+    return [[self alloc] initWithTarget:target];
+}
+
+- (instancetype)initWithTarget: (id)target
+{
+    if (self = [super init])
+    {
+        _target = target;
+    }
+    return self;
+}
+
+//@end
+
+//@implementation SCFakeObject(SCFakeObject_NSKeyValueObservationInfo)
 ImpFakeMethodWithId(observances)
 ImpFakeMethodWithId(observables)
 ImpFakeMethodWithNSUInteger(cachedHash)

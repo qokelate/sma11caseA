@@ -19,6 +19,7 @@ char *const kUpperCaseKeys = UpperCaseKeys;
 char *const kAlphabetKeys = AlphabetKeys;
 char *const kBase64Keys = Base64Keys;
 
+#if DefineSystemConstants
 NSString *const AVCaptureSessionPresetPhoto = @"AVCaptureSessionPresetPhoto";
 NSString *const AVCaptureSessionPresetHigh = @"AVCaptureSessionPresetHigh";
 NSString *const AVCaptureSessionPresetMedium = @"AVCaptureSessionPresetMedium";
@@ -30,3 +31,4 @@ NSString *const AVCaptureSessionPreset1920x1080 = @"AVCaptureSessionPreset1920x1
 NSString *const AVCaptureSessionPresetiFrame960x540 = @"AVCaptureSessionPresetiFrame960x540";
 NSString *const AVCaptureSessionPresetiFrame1280x720 = @"AVCaptureSessionPresetiFrame1280x720";
 NSString *const AVCaptureSessionPresetInputPriority = @"AVCaptureSessionPresetInputPriority";
+#endif

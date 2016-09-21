@@ -20,7 +20,7 @@ git add -A sma11case.xcodeproj/xcshareddata/*
 "./IOS/iosComponents/git_commit.sh"
 "./OSX/osxComponents/git_commit.sh"
 
-COMMIT_MESSAGE='no commit message'
+COMMIT_MESSAGE='sma11caseSDK v2.0'
 if [ -n "$1" ]; then
 	COMMIT_MESSAGE=$1
 fi

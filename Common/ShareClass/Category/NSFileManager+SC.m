@@ -16,11 +16,9 @@
 {
     NSMutableArray *array = NewMutableArray();
     
-    [self enumFilesWithPath:sourceDir userParam:array block:^BOOL(NSString *dirPath, NSString *fileName, BOOL isDir, id userParam) {
+    [self enumFilesWithPath:sourceDir block:^BOOL(NSString *dirPath, NSString *fileName, BOOL isDir) {
         
         if (isDir) return YES;
-        
-        NSMutableArray *array = userParam;
         
         BOOL state = NO;
         for (NSString *type in types)
@@ -60,7 +58,7 @@
     return length;
 }
 
-- (BOOL)enumFilesWithPath: (NSString *)path userParam: (id)param block: (EnumFileBlock)block
+- (BOOL)enumFilesWithPath: (NSString *)path block: (EnumFileBlock)block
 {
     NSArray *buffer = [self contentsOfDirectoryAtPath:path error:NULL];
     if (0 == buffer.count) return YES;
@@ -70,10 +68,10 @@
         NSString * fullPath = [path stringByAppendingPathComponent:aPath];
         BOOL isDir = NO;
         [self fileExistsAtPath:fullPath isDirectory:&isDir];
-        BOOL temp = block(path, aPath, isDir, param);
+        BOOL temp = block(path, aPath, isDir);
         if (NO == temp) return NO;
         
-        if (isDir) temp = [self enumFilesWithPath:fullPath userParam:param block:block];
+        if (isDir) temp = [self enumFilesWithPath:fullPath block:block];
         if (NO == temp) return NO;
     }
     return YES;
